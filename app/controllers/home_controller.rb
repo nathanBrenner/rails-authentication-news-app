@@ -8,10 +8,13 @@ class HomeController < ApplicationController
     @params = params
     if params['username']
       user = User.find_by_username(params['username'])
-      @valid = user.authenticate(params['password'])
+      @valid = user && user.authenticate(params['password'])
       if @valid
         session[:user_id] = user.id
         redirect_to '/'
+      else
+        flash.alert = 'Username or password incorrect'
+        redirect_to '/home/login'
       end
     end
   end
