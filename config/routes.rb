@@ -15,4 +15,3 @@ Rails.application.routes.draw do
   
   root 'home#index'
 end
-Style Selections San Terra Set of 2 Black Metal Frame Spring Motion Conversation Chair(s) with Red Slat Seat
